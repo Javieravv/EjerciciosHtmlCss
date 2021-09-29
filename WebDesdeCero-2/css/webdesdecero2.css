@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+
+/* Para declara variables o custom properties  */
+
+:root {
+    --color-primary: #444cf7;
+    --color-title: #000;
+    --aling-title: left: 0;
+    --padding-container: 100px 0;
+    --width-container: 90%;
+    --max-width-container: 1200px;
+    --color-btn: #444cf7;
+    --text-btn: #fff;
+    --padding-btn: 20px 35px;
+    --height-shape: 18em;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* background-color: #e5e5f7; */
+    opacity: 1;
+    background-image:  radial-gradient(#444cf7 0.75px, transparent 0.75px), radial-gradient(#444cf7 0.75px, #e5e5f7 0.75px);
+    background-size: 28px 28px;
+    background-position: 0 0,14px 14px;
+}
+
+.container {
+    width: var(--width-container);
+    max-width: var(--max-width-container);
+    padding: var(--padding-container);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Sección de Header */
+
+.hero {
+    height: 100vh;
+    min-width: 500px; /* Cuando el usuario móvil pase a LandsCape en su pantalla */
+    position: relative;
+    --padding-container: 0; /* Cambiamos el valor de esta variable para que afecte solo a este contenedor*/
+}
+
+.hero::after {
+    /* Debemos darle content para que el elemenot se cree
+    Esto es para el efecto del triángulo que se ve*/
+    content: "";
+    display: block;
+    position: absolute;
+    height: var(--height-shape);
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background:#fff;
+    z-index: -1; /*para que no se sobreponga sobre los elementos*/
+    clip-path: polygon(0 100%,100% 100%,100% 0);
+}
+
+.hero__container {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 3fr 2fr;
+    place-items: center; /* Para centrar*/
+    gap: 20px;
+}
+
+.hero__title {
+    font-size: 4rem;
+}
+
+.hero__copy {
+    font-size: 1.2rem;
+    margin: 25px 0;
+}
+
+.hero__cta {
+    display: inline-block; /* Para que acepte propiedaes de height, width, margin, etc*/
+    background: var(--color-btn);
+    color: #fff;
+    padding: var(--padding-btn);
+    text-align: center;
+    text-decoration: none;
+}
+
+.hero__img {
+    width: 95%;
+}
+
+/* Etiqueta main */
+
+main {
+    background: #fff;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: var(--aling-title);
+    color: var(--color-title);
+}
+
+.title--border::after {
+    content: "";
+    display: block;
+    width: 100px;
+    margin-top: 20px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.cta {
+    display: inline-block;
+    background: var(--color-btn);
+    color: var(--text-btn);
+    padding: var(--padding-btn);
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Instructor */
+
+.instructor {
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    --padding-container: 30px 0 60px;
+}
+
+.instructor__container {
+    width: 70px;
+    margin: 0 auto;
+}
+
+.instructor__name {
+    margin: 20px 0;
+}
+
+.instructor__tag {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+.instructor__paragraph {
+    text-align: left;
+    line-height: 1.5;
+    font-style: italic;
+    color: #615a5a;
+}
+
+.instructor__img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Sección de About */
+
+.about {
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    place-items: center; /* centrar vertical y horizontal*/
+}
+
+.about__course {
+    width: 90%;
+}
+
+.about__paragraph {
+    margin: 20px 0;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.about__picture {
+    text-align: center;
+}
+
+.about__img {
+    width: 95%;
+}
+
+/* Cards */
+
+.card {
+    background: #f2f2f2;
+    
+}
