@@ -13,6 +13,8 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+/* Encabezado -- Header */
+
 .container {
     width: 95%;
     margin: 0 auto;
@@ -514,12 +516,5 @@ body {
         margin: 0;
         margin-bottom: 20px;
     }
-
-
     /* Footer */
-
-
 }
-
-
-
