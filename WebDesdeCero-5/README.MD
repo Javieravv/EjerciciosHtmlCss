@@ -12,7 +12,9 @@ Ejercicio tomado del video en YouTube https://www.youtube.com/watch?v=9rnFV3vlJ3
 
 - https://bennettfeely.com/clippy/
 
+- https://www.magicpattern.design/tools
 
+- https://www.magicpattern.design/tools/css-backgrounds
 
 
 
