@@ -1,0 +1,156 @@
+/* EStilos usados para la página */
+
+/*Estilos generales*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;    
+}
+
+/* Header */
+
+.header {
+    width: 100%;
+}
+
+/* Para colocar una imagen de fondo */
+.header::after {
+    content: "";
+    background-image: url(../images/header-background.jpg);
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.container {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.head_container {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.head_menu {
+    width: 100%;
+    padding: 15px 0;
+    position: fixed;
+    background-color: #F5F8FA;
+}
+
+.nav_container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-basis: content;
+    padding: 15px 0;
+    margin: 0 auto;
+}
+
+.head_menu-logo {
+    /* width: 35%; */
+    flex: 1;
+}
+
+.head_menu-itemsmenu {
+    /* height: 65%; */
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.image_logo img {
+    width: 30%;
+}
+
+.items_menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    cursor: pointer;
+}
+
+.nav_item {
+    padding: 10px 10px;
+    color: #6b747b;
+}
+
+.nav_item:hover {
+    color: #21A7DF;
+}
+
+.social_icons {
+    display: flex;
+    flex-direction: row;
+}
+
+.social_icons__img {
+    width: 25px;
+    height: 25px;
+    margin: 5px 5px;
+    color: #21A7DF;
+}
+
+.head_title {
+    font-size: 2rem;
+    align-self: center;
+    height: 250px;
+    padding: 90px 15px;
+}
+
+.head_options {
+    width: 100%;
+    align-self: flex-end;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+.head_card {
+    /* width: 33%; */
+    display: flex;
+    flex-direction: column;
+}
+
+.head_card-title1 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+}
+
+.head_card__title  {
+    text-align: center;
+}
+
+.head_card__title h5 {
+    font-size: 1.4rem;
+}
+
+.head_card__img {
+
+}
+
+.head_card__img img {
+    width: 65px;    
+}
+
+.head_card__title {
+    padding-left: 25px;
+}
+.head_card__content {
+    font-size: 19px;
+    line-height: 1.5;
+    padding: 30px 2px;
+}
