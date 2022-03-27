@@ -5,84 +5,545 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Presentación</title>
-    <script src="https://kit.fontawesome.com/1f693926ea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/main-styles.css">
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
 </head>
-<body>
-        <header class="header">
-            <nav class="head_menu">
-                <div class="nav_container">
-                    <div class="head_menu-logo">
-                        <a href="index.html" class="image_logo">
-                            <img src="images/logo.svg" alt="Logo proyecto">
+<body> 
+    <!-- Menú Principal -->
+    <nav class="head_menu">
+        <div class="nav_container">
+            <div class="head_menu-logo">
+                <a href="index.html" class="image_logo">
+                    <img src="images/logo.svg" alt="Logo proyecto">
+                </a>
+            </div>
+            <div class="head_menu-itemsmenu">
+                <ul class="items_menu">
+                    <li class="nav_item">
+                        <a href="#" class="link_item">Home</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#about" class="link_item">About</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#services" class="link_item">Services</a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#details" class="link_item">Details</a>
+                    </li>
+                    <li class="nav_item ">
+                        <a href="#" class="link_item link_item-drop">
+                            Drop
+                            <img src="images/arrowdown.svg" alt="">
                         </a>
-                    </div>
-                    <div class="head_menu-itemsmenu">
-                        <ul class="items_menu">
-                            <li class="nav_item">Home</li>
-                            <li class="nav_item">About</li>
-                            <li class="nav_item">Services</li>
-                            <li class="nav_item">Details</li>
-                            <li class="nav_item">Drop</li>
-                            <li class="nav_item">Contacto</li>
+                        <ul>
+                            <li class="nav_item-drop">
+                                <a href="#">Article Details</a>
+                            </li>
+                            <li class="nav_item-drop">
+                                <a href="#">Tesms Conditions</a>
+                            </li>
+                            <li class="nav_item-drop">
+                                <a href="#">Privacy Policy</a>
+                            </li>
                         </ul>
-                        <div class="social_icons">
-                            <a href="#"><img src="images/facebook.svg" class="social_icons__img" alt=""></a>
-                            <a href="#"><img src="images/twitter.svg" class="social_icons__img" alt=""></a>
+                    </li>
+                    <li class="nav_item">
+                        <a href="#contact" class="link_item">Contacto</a>
+                    </li>
+
+                    <!-- <li class="nav_item">Home</li>
+                    <li class="nav_item">About</li>
+                    <li class="nav_item">Services</li>
+                    <li class="nav_item">Details</li>
+                    <li class="nav_item">Drop</li>
+                    <li class="nav_item">Contacto</li> -->
+                </ul>
+                <div class="social_icons">
+                    <a href="#"><img src="images/facebook.svg" class="social_icons__img" alt=""></a>
+                    <a href="#"><img src="images/twitter.svg" class="social_icons__img" alt=""></a>
+                </div>
+            </div>
+            <div class="head_menu--menu">
+                <img src="images/menu.svg" alt="Menu1" class="head_menu--menuimg">
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Sección header. -->
+    <header id="header">
+        <div class="container">
+            <div class="head_container">
+                <div class="head_title">
+                    <h1>Lorem ipsum dole siter<br/> amet consectev</h1>            
+                </div>
+                
+                <div class="head_options">
+                    <article class="head_card">
+                        <div class="head_card-title1">
+                            <div class="head_card__img">
+                                <img src="images/header-expertise-icon-1.svg" alt="">
+                            </div>
+                            <div class="head_card__title">
+                                <h5>TEMPORAL<br/> INCIDERE</h5>
+                            </div>
                         </div>
+                        <div class="head_card__content">
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        </div>
+                    </article>
+                    <article class="head_card">
+                        <div class="head_card-title1">
+                            <div class="head_card__img">
+                                <img src="images/header-expertise-icon-2.svg" alt="">
+                            </div>
+                            <div class="head_card__title">
+                                <h5>MAGNAR<br/> ALIQUA</h5>
+                            </div>
+                        </div>
+                        <div class="head_card__content">
+                            <p>Consequat semper viverra nam libero justo. Cursus vitae congue mauris rhoncus.</p>
+                        </div>
+                    </article>
+                    <article class="head_card">
+                        <div class="head_card-title1">
+                            <div class="head_card__img">
+                                <img src="images/header-expertise-icon-3.svg" alt="">
+                            </div>
+                            <div class="head_card__title">
+                                <h5>PULVINA <br/> MATTISO</h5>
+                            </div>
+                        </div>
+                        <div class="head_card__content">
+                            <p>Est velit egestas dui id. In eu mi bibendum neque egestas congue etiam dignissim.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seccion about -->
+    <section id="about">
+        <div class="about_container">
+            <div class="about_title">
+                <p>ABOUT</p>
+                <h2>Lobortis sceler fermentum dui</h2>
+            </div>
+            <div class="about_content">
+                <article class="about_content-article">
+                    <img class="about_content-img" src="images/about.jpg" alt="About">
+                </article>
+                <article class="about_content-article about_content-article1">
+                    <h2>Pulvia mattis nuncs</h2>
+                    <p>
+                        Sed turpis tincidunt id aliquet risus feugiat in ante metus. Leo urna molestie at elementum eu facilisis. Nunc eget lorem dolor sed viverra ipsum. Adipiscing elit duis tristique sollicitudin nibh sit
+                    </p>
+                    <ul>
+                        <li>2020 - Urpis tinnt id aliquet risus</li>
+                        <li>2021 - Feugiat in ante metus leora</li>
+                        <li>Present - Nunc eget lorem dolor sed</li>
+                    </ul>
+                </article>
+                <article class="about_content-article about_content-article1">
+                    <div class="about_content-testimonial">
+                        “Viverra ipsum adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Tristique senectus et netus et malesuada fames rhoncus”
+                    </div>
+                    <hr>
+                    <div class="about_content-testimonialauthor">
+                        Lorem Ipsum
+                    </div>
+                    <div class="about_content-testimonialstatus">
+                        General Manager
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Services -->
+    <section id="services">
+        <div class="services_container">
+            <div class="services_title">
+                <p>SERVICES</p>
+                <h2>Urna neque viverra justo nec ultri<br>dui sapien ege sit amet di pare</h2>
+            </div>
+            <div class="services_content">
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-1.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Lorem Ipsum
+                        </h3>
+                        <p>
+                            Labore et dolore magna aliqua consequat semper viverra nam libero justo cursus viterbo
+                        </p>
+                    </div>    
+                </article>
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-2.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Dolor Sitamet
+                        </h3>
+                        <p>
+                            Mauris rhoncus aenean est velit egestas dui id in eu mi bibendum neque egestas congue les
+                        </p>
+                    </div>    
+                </article>
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-3.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Consect Uradipe
+                        </h3>
+                        <p>
+                            Etiam dignissim diam quis enim lobortis scelerisque fermentum dui viverra nibh cras bitu
+                        </p>
+                    </div>    
+                </article>
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-4.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Cingeli Tsedo
+                        </h3>
+                        <p>
+                            Sed turpis tincidunt id aliquet risus feugiat in ante metus leo urna molestie at elem dero
+                        </p>
+                    </div>    
+                </article>
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-5.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Eiusmod Tempor
+                        </h3>
+                        <p>
+                            Adipiscing elit duis tristique sollicitudin nibh sit amet comdo nulla tristique sene depro asla
+                        </p>
+                    </div>    
+                </article>
+                <article class="services_card">
+                    <div class="services_card-img">
+                        <img src="images/service-icon-6.svg" alt="">
+                    </div>
+                    <div class="services_card-content">
+                        <h3>
+                            Incidi Duntut
+                        </h3>
+                        <p>
+                            Rhoncus urna neque viverra justo nec ultrices dui sapien eget sit amet tellus cras fer tilo rim
+                        </p>
+                    </div>    
+                </article>
+            </div>
+            <div class="services_footer">
+                Adipiscing enim eu turpis egestas pretium suscipit tellus mauris a diam mae. <span>Contact us</span> nulla pharetra diam
+            </div>
+            
+        </div>
+        <div style="height: 150px; overflow: hidden;" class="services_wave">
+            <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.00,49.98 C244.07,149.52 259.87,146.55 500.00,49.98 L500.00,150.00 L0.00,150.00 Z" style="stroke: none; fill: #ffffff;"></path></svg>
+        </div>
+    </section>
+
+    <!-- Sección Details. -->
+    <section id="details">
+        <div class="details_container">
+            <section class="details_item">
+                <div class="details_item-img">
+                    <img src="images/details-1.jpg" alt="">
+                </div>
+                <div class="details_item-text">
+                    <h2>Blandit turpis cursus in</h2>
+                    <p>Viverra tellus in hac habitasse. Pellentesque habitant morbi tristique senectus. Magna sit amet purus gravida quis bldit. Enim praesent elem facilisis leo vel. Praesent elementum facilisis leo vel fringilla est ullamcorper vita dura est</p>
+                    <ul>
+                        <li>Aliquet sagittis id consectetur purus vestibulum mattis</li>
+                        <li>Ed ullamcorper morbi tincidunt ornare. Enim tellu</li>
+                        <li>Agittis vitae et leo. Ac ut consequat semper</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="details_item">
+                <div class="details_item-img">
+                    <img src="images/details-2.jpg" alt="">
+                </div>
+                <div class="details_item-text">
+                    <h2>Lorem donec mas sap</h2>
+                    <p>Justo laoreet duis at consectetur lorem donec massa sapien. Vestibulum rhoncus est pellentesque elit ullam corper dignissim cras tincidunt lobortis euismod quis</p>
+                    <p>Mauris commodo quis imperdiet massa tincidunt nunc. Pharetra diam sit amet nisl suscipit adipiscing bib</p>
+                    <div class="details_item-bottom">
+                        <button class="btn-lightbox">Lighbox</button>
+                        <button class="btn-white">Contact Us</button>
                     </div>
                 </div>
-            </nav>
-            <div class="container">
-                <div class="head_container">
-                    <div class="head_title">
-                        <h1>Lorem ipsum dole siter<br/> amet consectev</h1>            
-                    </div>
-                    
-                    <div class="head_options">
-                        <article class="head_card">
-                            <div class="head_card-title1">
-                                <div class="head_card__img">
-                                    <img src="images/header-expertise-icon-1.svg" alt="">
+            </section>
+            <section class="details_item">
+                <div class="details_item-img">
+                    <img src="images/details-3.jpg" alt="">
+                </div>
+                <div class="details_item-text">
+                    <h2>Dignssim convallis aenea</h2>
+                    <p>Risus pretium quam vulputate dignissim suspendisse in est ante in. Lorem dolor sed viverra ipsum nunc aliquet bibum. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique senectus lorem ipsum
+                    </p>
+                    <ul>
+                        <li>Venenatis a condimentum vitae sapien pellenteue rem</li>
+                        <li>Rhoncus urna neque viverra justo nec turpis tinci</li>
+                        <li>Eu feugiat pretium nibh ipsum consequat nisl</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </section>        
+
+    <!-- Sección contadores  -->
+    <section id="counters">
+        <div class="counters_container">
+            <section class="counters_cells">
+                <div class="counters_cells-item">
+                    <div class="counter-value" data-count="231">231</div>
+                    <div class="counter-name">Habitn Morbi</div>
+                </div>
+                <div class="counters_cells-item">
+                    <div class="counter-value" data-count="385">385</div>
+                    <div class="counter-name">Uncre Conseu</div>
+                </div>
+                <div class="counters_cells-item">
+                    <div class="counter-value" data-count="159">159</div>
+                    <div class="counter-name">Odiope Lentes</div>
+                </div>
+                <div class="counters_cells-item">
+                    <div class="counter-value" data-count="127">127</div>
+                    <div class="counter-name">Portior Rhons</div>
+                </div>
+                <div class="counters_cells-item">
+                    <div class="counter-value" data-count="211">211</div>
+                    <div class="counter-name">Dolor Puruse</div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Seccion Testimonios -->
+    <section id="testimonies">
+        <div class="testimonies_container">
+            <div class="testimonies_title">
+                <p>TESTIMONIALS</p>
+                <h2>Portitor rhoncus dolor pur</h2>
+            </div>
+            <div class="testimonies_content">
+                <div class="swiper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-1.jpg" alt="">
                                 </div>
-                                <div class="head_card__title">
-                                    <h5>TEMPORAL<br/> INCIDERE</h5>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
                                 </div>
                             </div>
-                            <div class="head_card__content">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            </div>
-                        </article>
-                        <article class="head_card">
-                            <div class="head_card-title1">
-                                <div class="head_card__img">
-                                    <img src="images/header-expertise-icon-2.svg" alt="">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-2.jpg" alt="">
                                 </div>
-                                <div class="head_card__title">
-                                    <h5>MAGNAR<br/> ALIQUA</h5>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
                                 </div>
                             </div>
-                            <div class="head_card__content">
-                                <p>Consequat semper viverra nam libero justo. Cursus vitae congue mauris rhoncus.</p>
-                            </div>
-                        </article>
-                        <article class="head_card">
-                            <div class="head_card-title1">
-                                <div class="head_card__img">
-                                    <img src="images/header-expertise-icon-3.svg" alt="">
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-3.jpg" alt="">
                                 </div>
-                                <div class="head_card__title">
-                                    <h5>PULVINA <br/> MATTISO</h5>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
                                 </div>
                             </div>
-                            <div class="head_card__content">
-                                <p>Est velit egestas dui id. In eu mi bibendum neque egestas congue etiam dignissim.</p>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-4.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
+                                </div>
                             </div>
-                        </article>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-5.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide-img">
+                                    <img src="images/testimonial-6.jpg" alt="">
+                                </div>
+                                <div class="swiper-slide-text">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, ab. Aperiam, veritatis!
+                                </div>
+                                <div class="swiper-slide-status">
+                                    Lorem Ipsum - Developer
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
             </div>
-        </header>
-        
-    </body>
-    </html>
+    </section> 
+
+    <!-- Sección contactos -->
+    <section id="contact">
+        <div class="contact_container">
+            <div class="contact_title">
+                <h2>Portitor rhoncus dolor pur</h2>
+                <p>Porttitor rhoncus dolor purus non enim praesent elementum. Sem integer vitae justo eget magna fermentum iaculis eu. Quis vel mucho dere eros donec ac odio tem <span>contact@name.com</span></p>
+            </div>
+            <div class="contact_content">
+                <form action="#" class="contact-form">
+                    <div class="contact-form-group">
+                        <input type="text" name="cname" id="cname" class="contact-form-control-input" required placeholder = " ">
+                        <label for="cname" class="contact-label-control">Name</label>
+                    </div>
+                    <div class="contact-form-group">
+                        <input type="email" name="cemail" id="cemail" class="contact-form-control-input" required placeholder = " ">
+                        <label for="cemail" class="contact-label-control">Email</label>
+                    </div>
+                    <div class="contact-form-group">
+                        <textarea name="cmessage" id="cmessage" class="contact-form-control-area" placeholder = " "></textarea>
+                        <label for="cmessage" class="contact-label-textarea">Project Details</label>
+                    </div>
+                    <div class="contact-form-group">
+                        <button class="btnsubmit" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+    </section> 
+
+    <footer>
+        <div class="footer-container">
+            <section class="footer-content">
+                <article class="footer-item">
+                    <h3>Lorem Ipsum</h3>
+                    <p>Arcu felis bibendum ut tristique et egestas quis ipsum. Ipsum dolor sit amet consectetur. At risus viverra adipiscing at in tellus rempre vito</p>
+                </article>
+                <article class="footer-item">
+                    <h3>Links</h3>
+                    <p>Important: Terms & Conditions, Privacy Policy
+                        Useful: Colorpicker, Icon Library, Illustrations
+                        Menu: Home, About, Services, Contact</p>
+                </article>
+                <article class="footer-item footer-item-social">
+                    <div class="icons-social">
+                        <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
+                        <a href="#"><img src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img src="images/pinterest.svg" alt="Pinteres"></a>
+                        <a href="#"><img src="images/instagram.svg" alt="Instagram"></a>
+                    </div>
+                    <p>Sit amet nulla facilisi morbie</p>
+                    <p>contact@javieravv.online</p>
+                </article>
+            </section>
+            <div class="footer-copyright">
+                Copyright © Javier Armando Vargas Vega - 2022
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script para el slider -->
+    <script src="js/swiper.min.js"></script>
+    <!-- <script src="js/swiper-bundle.min.js"></script> -->
+
+    <!-- Inicio del sliders -->
+    <script>
+        let cardSlider = new Swiper('.swiper', {
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false
+            },
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            slidesPerView: 3,
+            direction: getDirection(),
+            spaceBetween: 20,
+            breakpoints: {
+                // when window is <= 767px
+                767: {
+                    slidesPerView: 1
+                },
+                // when window is <= 991px
+                991: {
+                    slidesPerView: 2,
+                    spaceBetween: 40
+                }
+            }
+        });
+
+        function getDirection() {
+            let windowWidth = window.innerWidth;
+            let direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+            return direction;
+        }
+
+        // let swiper = new Swiper('.swiper', {
+        //     autoplay: {
+        //         delay: 1000,
+        //         disableOnInteraction: false
+        //     },
+        //     loop: true,
+        //     slidesPerView: 3,
+        //     direction: getDirection(),
+        //     navigation: {
+        //         nextEl: '.swiper-button-next',
+        //         prevEl: '.swiper-button-prev',
+        //     },
+        //     on: {
+        //     resize: function () {
+        //         swiper.changeDirection(getDirection());
+        //     },
+        //     },
+        // });
+
+        // function getDirection() {
+        //     var windowWidth = window.innerWidth;
+        //     var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
+
+        //     return direction;
+        // }
+    </script>
+
+</body>
+</html>

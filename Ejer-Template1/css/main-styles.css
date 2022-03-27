@@ -2,56 +2,49 @@
 
 /*Estilos generales*/
 
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    --widthContainer: 70%;
+}
+
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 
-/* Header */
-
-.header {
-    width: 100%;
+:root {
+    scroll-behavior: smooth; /* Para controlar cómo se desplaza*/
 }
 
-/* Para colocar una imagen de fondo */
-.header::after {
-    content: "";
-    background-image: url(../images/header-background.jpg);
-    opacity: 0.5;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
+a {
+    text-decoration: none;
 }
 
-.container {
-    width: 85%;
-    margin: 0 auto;
+body {
+    position: relative;
 }
 
-.head_container {
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
-
+/* Estilos para el menú de la aplicación */
 .head_menu {
     width: 100%;
-    padding: 15px 0;
+    padding: 5px 0;
+    background-color:#F5F7F7;
+    z-index: 1050;
     position: fixed;
-    background-color: #F5F8FA;
 }
 
 .nav_container {
-    width: 90%;
+    width: var(--widthContainer);
     display: flex;
     flex-direction: row;
-    flex-basis: content;
-    padding: 15px 0;
+    /* flex-basis: content; */
+    padding: 5px 0;
     margin: 0 auto;
 }
 
@@ -67,8 +60,20 @@
     flex: 1;
 }
 
+.head_menu--menu {
+    position: absolute;
+    right: 20px;
+    width: 50px;
+    display: none;
+}
+
+.head_menu--menu img {
+    width: 45px;
+}
+
+
 .image_logo img {
-    width: 30%;
+    width: 150px;
 }
 
 .items_menu {
@@ -80,13 +85,61 @@
 }
 
 .nav_item {
-    padding: 10px 10px;
-    color: #6b747b;
+    padding: 10px 20px;
+    position: relative;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
 }
 
 .nav_item:hover {
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+
+.nav_item a {
+    color: #6b747b;
+    font-weight: bold;
+}
+
+.nav_item a:hover {
     color: #21A7DF;
 }
+
+.nav_item ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right:0;
+    bottom:0;
+    left: 15px;
+    list-style: none;
+    padding-top: 3px 10;
+    /* width: max-content; */
+    width: 200px;
+    clip-path: var(--clip);
+    transition: clip-path .5s;
+    border: 1px solid #dee4e4;
+    transform: translateY(100%);
+    background-color: #F7F9FA;
+}
+
+.nav_item-drop {
+    padding: 18px 10px;
+    border-bottom: 1px solid #dee4e4;
+}
+
+.link_item-drop {
+    position: relative;
+    display: flex;
+
+}
+
+.link_item-drop img {
+    position: absolute;
+    right: -30px;
+    top: -5px;
+}
+
 
 .social_icons {
     display: flex;
@@ -97,8 +150,31 @@
     width: 25px;
     height: 25px;
     margin: 5px 5px;
-    color: #21A7DF;
 }
+
+/* Estilos para el Header */
+
+#header {
+    /* width: 100%; */
+    background: linear-gradient(rgba(255, 255, 255, 0.7),
+                 rgba(255, 255, 255, 0.7)), 
+                 url(../images/header-background.jpg) 
+                 center center no-repeat;
+    background-size: cover;
+}
+
+.container {
+    width: var(--widthContainer);
+    margin: 0 auto;
+}
+
+.head_container {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
 
 .head_title {
     font-size: 2rem;
@@ -108,7 +184,7 @@
 }
 
 .head_options {
-    width: 100%;
+    /* width: 100%; */
     align-self: flex-end;
     min-height: 300px;
     display: grid;
@@ -123,7 +199,7 @@
 }
 
 .head_card-title1 {
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: row;
     align-content: space-between;
@@ -153,4 +229,732 @@
     font-size: 19px;
     line-height: 1.5;
     padding: 30px 2px;
+}
+
+/* Sección about */
+
+#about {
+    /* width: 100%; */
+    background: url(../images/about-background.jpg) 
+        center center no-repeat;
+    background-size: cover;
+}
+
+.about_container {
+    display: flex;
+    flex-direction: column;
+    width: var(--widthContainer);
+    min-height: 700px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.about_title {
+    /* flex: 1; */
+    padding: 100px 0 50px 0;
+    display: grid;
+    /* flex-direction: row; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+.about_title p {
+    font-size: 1rem;
+    color: #21A7DF;
+    font-weight: 500;
+}
+
+.about_title h2 {
+    font-size: 2.5rem;
+}
+.about_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.about_content-article {
+    min-height: 400px;
+}
+
+.about_content-article h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    padding: 0px 0 5px 0;
+}
+
+.about_content-article ul {
+    padding-left: 15px;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+}
+
+.about_content-article p {
+    line-height: 1.5em;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.about_content-img {
+    width: 300px;
+}
+
+.about_content-article1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.about_content-article1 hr {
+    width: 5rem;
+    height: 2px;
+    border: none;
+    margin-top: 1.125rem;
+    margin-bottom: 1.125rem;
+    background-color: #21A7DF;
+    display: inline-block;
+}
+
+.about_content-testimonial {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 2.125rem;
+}
+
+.about_content-testimonialauthor {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.about_content-testimonialstatus {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Sección services */
+
+#services {
+    /* width: 100%; */
+    background-color: #3f424b;
+    color: #ffffff;
+}
+
+.services_container {
+    width: var(--widthContainer);
+    min-height: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.services_title {
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.services_title p {
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #21A7DF;
+}
+
+.services_title h2 {
+    font-size: 2.8rem;
+}
+
+.services_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 15px;
+}
+
+.services_card {
+    display: flex;
+    flex-direction: row;
+    min-height: 200px;
+    gap: 20px;
+}
+
+.services_card-img {
+    width: 200px;
+}
+
+.services_card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.services_card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.services_card-content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.services_footer {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.services_footer span {
+    color: #21A7DF;
+}
+
+.services_wave {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;   
+}
+
+/* Sección Details. */
+
+#details {
+    /* width: 100%; */
+    padding-top: 80px;
+    margin-bottom: 100px;
+}
+
+.details_container {
+    width: var(--widthContainer);
+    margin: 0 auto;   
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.details_item {
+    display: flex;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.details_item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.details_item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.details_item-img {
+    
+}
+
+.details_item-img img {
+    width: 500px;
+}
+
+.details_item-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.details_item-text h2 {
+    padding-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.details_item-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.details_item-text ul {
+    padding-left: 15px;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+}
+
+.details_item-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+}
+
+.details_item-bottom button {
+    width: 180px;
+    padding: 20px 20px;
+    border-radius: 35px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-lightbox {
+    background-color: #21A7DF;
+    color: white;
+    border: solid 1px #21A7DF;
+}
+
+.btn-lightbox:hover {
+    background-color: white;
+    color: #21A7DF;
+}
+
+.btn-white {
+    background-color: white;
+    border: solid 1px black;
+    color: black;
+}
+
+.btn-white:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Sección Contadores - Counter  */
+
+#counters {
+    /* width: 100%; */
+}
+
+.counters_container {
+    width: var(--widthContainer);
+    margin: 0 auto;   
+    padding: 10px 20px;
+    min-height: 300px;
+}
+
+.counters_cells {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.counters_cells-item {
+    text-align: center;
+}
+
+.counter-value {
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.counter-name {
+    font-size: 17px;
+}
+
+/* Sección Testimonios */
+
+#testimonies {
+    /* width: 100%; */
+    background-color: #F7F9FA;
+    /* color: #ffffff; */
+}
+
+.testimonies_container {
+    width: var(--widthContainer);
+    min-height: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonies_title {
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.testimonies_title p {
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: 400;
+    color: #21A7DF;
+}
+
+.testimonies_title h2 {
+    font-size: 2.8rem;
+}
+
+.testimonies_content {
+    max-height: 300px;
+}
+
+.swiper {
+    /* width: 100%; */
+    /* height: 100%; */
+    /* padding: 0px 20px; */
+}
+
+.swhiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    /* Fix of Webkit flickering */
+    z-index: 1;
+}
+
+.swiper-wrapper {
+    
+}
+
+.swiper-slide {
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    gap: 30px;
+}
+
+.swiper-slide-img img {
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.swiper-slide-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.swiper-slide-status {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.swiper-button-next {
+    
+}
+.swiper-button-prev {
+    
+}
+
+/* Estilos para los contactos */
+
+#contact {
+    /* width: 100%; */
+    min-height: 700px;
+    padding-top: 8.25rem;
+    padding-bottom: 4.5rem;
+    text-align: center;
+    background: linear-gradient(rgba(63, 66, 75, 0.7),
+                 rgba(63, 66, 75, 1)), 
+                 url(../images/contact-background.jpg) 
+                 center center no-repeat;
+    background-size: cover;
+}
+
+.contact_container {
+    width: var(--widthContainer);
+    margin: 0 auto;
+    color: white;
+}
+
+.contact_title {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_title h2 {
+    font-size: 2.5rem;
+    padding: 8px 0;
+}
+
+.contact_title p {
+    padding: 15px 0;
+    font-size: 1.3rem;
+}
+
+.contact_title span {
+    color: #21A7DF;
+}
+
+.contact_content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form {
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    position: relative;
+}
+
+.contact-form-control-input {
+    height: 3rem;
+    padding-top: 1.125rem;
+    padding-bottom: 0.125rem;
+    padding-left: 1.625rem;
+    background-color: #666A75;
+    border: 0.8px solid rgb(165, 164, 164);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.contact-label-control {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.625rem;
+}
+
+/* Para lograr el movimiento de las etiquietas de los labels. */
+
+.contact-form-control-input:focus + .contact-label-control,
+.contact-form-control-input:not(:placeholder-shown) + .contact-label-control,
+.contact-form-control-area:focus + .contact-label-textarea,
+.contact-form-control-area:not(:placeholder-shown) + .contact-label-textarea
+ {
+    transform: translateY(-12px) scale(1);
+    transform-origin: left top;
+
+}
+
+.contact-form-control-area {
+    height: 15rem;
+    background-color: #666A75;
+    padding-top: 1.5rem;
+    padding-left: 1.625rem;
+    border: 0.8px solid rgb(165, 164, 164);
+    color: white;
+    font-size: 1.1rem;
+}
+
+.contact-label-textarea {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.625rem;
+}
+
+.btnsubmit {
+    padding: 15px 0;
+    border-radius: 30px;
+    background-color:  #21A7DF;
+    border: solid 1px #21A7DF;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Píe de página */
+
+footer {
+    min-height: 300px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: #ffffff;
+    background-color: #3F424B;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    width: var(--widthContainer);
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.footer-item {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.footer-item h3 {
+    font-weight: bold;
+    padding: 10px 0;
+    font-size: 1.5em;
+}
+
+.footer-item p {
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.footer-item-social p {
+    text-align: right;
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+.icons-social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+}
+
+.icons-social a {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons-social a:hover {
+    background-color: #21A7DF;
+    color: white;
+}
+
+.icons-social div img {
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.footer-copyright {
+    font-size: 18px;
+    text-align: center;
+}
+
+
+/*========================================
+Media queries
+===========================================*/
+
+@media (max-width:1200px) {
+    :root {
+        --widthContainer: 80%;
+    }
+}
+
+/*======================= Ancho máximo 930px =========== */
+
+@media (max-width:930px) {
+    :root {
+        --widthContainer: 95%;
+    }
+
+    /* Estilos para el menú */
+    .head_menu--menu {
+        display: block;
+    }    
+
+    .head_menu-itemsmenu {
+        display: none;
+    }
+
+    /* EStilos para el Header */
+    .head_title {
+        font-size: 1.8rem;
+        /* padding: 20px 15px; */
+    }
+
+    /* Estilos para About */
+
+    #about {
+        background: "";
+    }
+
+    .about_container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .about_content {
+        grid-template-columns: 1fr;
+        gap: 2px;
+    }
+
+    .about_content-article {
+        min-height: 300px;
+    }
+
+    .about_content-img {
+        width: 450px;
+        text-align: center;
+    }
+
+    /*EStilos para services*/
+
+    .services_title h2 {
+        font-size: 2rem;
+    }
+
+    .services_content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* EStilos para Details ++++++*/
+
+
+}
+
+/*======================= Ancho máximo 800px =========== */
+
+
+@media (max-width:800px) {
+    :root {
+        --widthContainer: 99%;
+    }
+
+   /* EStilos para el Header */
+
+   .head_title {
+        font-size: 1.2rem;
+        /* padding: 20px 15px; */
+    }
+   .head_options {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .head_card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* flex-direction: column; */
+    }
+
+    /*EStilos para services*/
+
+    .services_content {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .services_card {
+        min-height: 125px;
+    }
+    .services_card-img {
+        width: 120px;
+    }
+
+    .services_footer {
+        font-size: 1rem;
+    }
+}
+
+/*======================= Ancho máximo 600px =========== */
+
+@media (max-width:600px) {
+    /* EStilos para el Header     */
+    .head_card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
